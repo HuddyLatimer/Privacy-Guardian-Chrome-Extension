@@ -4,7 +4,7 @@ A comprehensive privacy protection extension that helps you maintain control ove
 
 ## Showcase
 
-![Privacy Guardian Interface](screenshots/popup.png)
+![Privacy Guardian Interface](popup.png)
 
 ### Key Features Demonstrated:
 - 🛡️ **Active Protection**: Real-time tracker and social widget blocking
