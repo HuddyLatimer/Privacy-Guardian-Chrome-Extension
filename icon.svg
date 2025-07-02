@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background -->
+  <path
+    d="M64 8 L112 28 V60 C112 92 92 116 64 120 C36 116 16 92 16 60 V28 L64 8Z"
+    fill="#4a9eff"
+    stroke="#2d2d2d"
+    stroke-width="4"/>
+  
+  <!-- Privacy lock symbol -->
+  <g transform="translate(64,64) scale(0.4) translate(-64,-64)">
+    <!-- Lock body -->
+    <rect
+      x="44"
+      y="64"
+      width="40"
+      height="32"
+      rx="4"
+      fill="#ffffff"/>
+    
+    <!-- Lock shackle -->
+    <path
+      d="M52 64 V44 C52 34 58 28 64 28 C70 28 76 34 76 44 V64"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="8"
+      stroke-linecap="round"/>
+  </g>
+</svg> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Privacy Guardian</h1>
+      <div class="master-toggle">
+        <label class="switch">
+          <input type="checkbox" id="masterToggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label">Enable Protection</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span id="trackerCount">0</span>
+        <span class="stat-label">Trackers Blocked</span>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-item">
+        <label class="switch">
+          <input type="checkbox" id="trackingScripts">
+          <span class="slider round"></span>
+        </label>
+        <span class="feature-label">Block Tracking Scripts</span>
+      </div>
+
+      <div class="feature-item">
+        <label class="switch">
+          <input type="checkbox" id="socialWidgets">
+          <span class="slider round"></span>
+        </label>
+        <span class="feature-label">Block Social Widgets</span>
+      </div>
+
+      <div class="feature-item">
+        <label class="switch">
+          <input type="checkbox" id="cookieControl">
+          <span class="slider round"></span>
+        </label>
+        <span class="feature-label">Cookie Control</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="clearData" class="btn-clear">Clear Browsing Data</button>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content">
+        <h2>Clear Browsing Data?</h2>
+        <p>This will clear your history, cookies, and cache.</p>
+        <div class="modal-actions">
+          <button id="confirmClear" class="btn-confirm">Yes, Clear</button>
+          <button id="cancelClear" class="btn-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 

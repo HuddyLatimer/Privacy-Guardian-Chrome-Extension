@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Privacy Guardian Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+        }
+    </style>
+
+    <!-- Google Analytics (should be blocked) -->
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <!-- Facebook SDK (should be blocked) -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+    <!-- Twitter widgets (should be blocked) -->
+    <script async src="https://platform.twitter.com/widgets.js"></script>
+</head>
+<body>
+    <h1>Privacy Guardian Test Page</h1>
+    <p>This page contains various trackers and social widgets to test the Privacy Guardian extension.</p>
+
+    <div class="test-section">
+        <h2>1. Tracker Detection Test</h2>
+        <p>The following trackers should be blocked:</p>
+        <ul>
+            <li>Google Analytics</li>
+            <li>Facebook SDK</li>
+            <li>Twitter Widgets</li>
+        </ul>
+        <div class="status" id="tracker-status">Checking tracker status...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Social Widget Test</h2>
+        <p>These social widgets should be blocked:</p>
+        
+        <!-- Facebook Like Button -->
+        <div id="fb-root"></div>
+        <div class="fb-like" data-href="https://www.facebook.com" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+        
+        <!-- Twitter Follow Button -->
+        <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+        
+        <!-- LinkedIn Share Button -->
+        <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+        <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Extension Status</h2>
+        <div class="status" id="extension-status">
+            Trackers blocked: <span id="blocked-count">Checking...</span>
+        </div>
+    </div>
+
+    <script>
+        // Check if trackers are loaded
+        window.setTimeout(() => {
+            const trackerStatus = document.getElementById('tracker-status');
+            const gaBlocked = typeof ga === 'undefined';
+            const fbBlocked = typeof FB === 'undefined';
+            const twitterBlocked = typeof twttr === 'undefined';
+            
+            let status = 'Results:<br>';
+            status += `Google Analytics: ${gaBlocked ? '✅ Blocked' : '❌ Not Blocked'}<br>`;
+            status += `Facebook SDK: ${fbBlocked ? '✅ Blocked' : '❌ Not Blocked'}<br>`;
+            status += `Twitter Widgets: ${twitterBlocked ? '✅ Blocked' : '❌ Not Blocked'}`;
+            
+            trackerStatus.innerHTML = status;
+        }, 2000);
+
+        // Update blocked count periodically
+        function updateBlockedCount() {
+            const blockedCount = document.getElementById('blocked-count');
+            // The actual count will be updated by the extension
+            blockedCount.textContent = 'Check the extension popup for current count';
+        }
+        updateBlockedCount();
+    </script>
+</body>
+</html> 
